@@ -4,37 +4,41 @@
 >
 > 原项目：https://microsoft.github.io/RustTraining/
 
+## 🌐 在线阅读
+
+**📖 [点击这里在线阅读全部书籍](https://cxg417914077.github.io/rust-training-cn/)**
+
 ## 📚 翻译进度
 
-| 书籍 | 难度 | 翻译进度 | 状态 |
-|------|------|---------|------|
-| [Rust for Python Programmers](python-book/) | 🟢 Bridge | ✅ 完成 | 可阅读 |
-| [Async Rust](async-book/) | 🟡 Advanced | ✅ 完成 | 可阅读 |
-| [Rust Patterns](rust-patterns-book/) | 🟡 Advanced | ✅ 完成 | 可阅读 |
-| [Type-Driven Correctness](type-driven-correctness-book/) | 🟣 Expert | ✅ 完成 | 可阅读 |
-| [Rust Engineering Practices](engineering-book/) | 🟤 Practices | ✅ 完成 | 可阅读 |
-| Rust for C/C++ Programmers | 🟢 Bridge | ⬜ 未开始 | 📝 待翻译 |
-| Rust for C# Programmers | 🟢 Bridge | ⬜ 未开始 | 📝 待翻译 |
+| 书籍 | 难度 | 在线阅读 | 翻译进度 | 状态 |
+|------|------|---------|---------|------|
+| Rust for Python Programmers | 🟢 Bridge | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/python-book/) | ✅ 完成 | 可阅读 |
+| Async Rust | 🟡 Advanced | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/async-book/) | ✅ 完成 | 可阅读 |
+| Rust Patterns | 🟡 Advanced | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/rust-patterns-book/) | ✅ 完成 | 可阅读 |
+| Type-Driven Correctness | 🟣 Expert | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/type-driven-correctness-book/) | ✅ 完成 | 可阅读 |
+| Rust Engineering Practices | 🟤 Practices | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/engineering-book/) | ✅ 完成 | 可阅读 |
+| Rust for C/C++ Programmers | 🟢 Bridge | - | ⬜ 未开始 | 📝 待翻译 |
+| Rust for C# Programmers | 🟢 Bridge | - | ⬜ 未开始 | 📝 待翻译 |
 
 ## 📖 快速开始
 
 ### 按背景选择书籍
 
-| 编程背景 | 推荐书籍 |
-|---------|---------|
-| Python 开发者 | [Rust for Python Programmers](python-book/) |
-| 已有 Rust 基础 | [Async Rust](async-book/)、[Rust Patterns](rust-patterns-book/) |
-| 追求类型系统深度 | [Type-Driven Correctness](type-driven-correctness-book/) |
-| 工程实践导向 | [Rust Engineering Practices](engineering-book/) |
+| 编程背景 | 推荐书籍 | 在线阅读 |
+|---------|---------|---------|
+| Python 开发者 | Rust for Python Programmers | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/python-book/) |
+| 已有 Rust 基础 | Async Rust、Rust Patterns | [Async](https://cxg417914077.github.io/rust-training-cn/async-book/) / [Patterns](https://cxg417914077.github.io/rust-training-cn/rust-patterns-book/) |
+| 追求类型系统深度 | Type-Driven Correctness | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/type-driven-correctness-book/) |
+| 工程实践导向 | Rust Engineering Practices | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/engineering-book/) |
 
 ### 按难度选择
 
-| 难度 | 书籍 |
-|------|------|
-| 🟢 **入门** | Rust for Python Programmers |
-| 🟡 **进阶** | Async Rust、Rust Patterns |
-| 🟣 **专家** | Type-Driven Correctness |
-| 🟤 **工程实践** | Rust Engineering Practices |
+| 难度 | 书籍 | 在线阅读 |
+|------|------|---------|
+| 🟢 **入门** | Rust for Python Programmers | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/python-book/) |
+| 🟡 **进阶** | Async Rust、Rust Patterns | [Async](https://cxg417914077.github.io/rust-training-cn/async-book/) / [Patterns](https://cxg417914077.github.io/rust-training-cn/rust-patterns-book/) |
+| 🟣 **专家** | Type-Driven Correctness | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/type-driven-correctness-book/) |
+| 🟤 **工程实践** | Rust Engineering Practices | [📖 阅读](https://cxg417914077.github.io/rust-training-cn/engineering-book/) |
 
 ## 🚀 本地构建
 
@@ -77,6 +81,8 @@ cd engineering-book && mdbook serve --open
 
 ## 🔗 相关链接
 
+- [📖 在线阅读](https://cxg417914077.github.io/rust-training-cn/)
 - [英文原版](https://microsoft.github.io/RustTraining/)
 - [Rust 官方文档](https://doc.rust-lang.org/book/)
 - [Rust 中文社区](https://rustcc.cn/)
+- [本项目 GitHub](https://github.com/cxg417914077/rust-training-cn)
