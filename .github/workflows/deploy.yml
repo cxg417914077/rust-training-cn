@@ -56,23 +56,41 @@ jobs:
       - name: Create site directory
         run: mkdir -p site
 
-      - name: Download all artifacts
+      - name: Download python-book
         uses: actions/download-artifact@v4
         with:
-          pattern: site-*
-          path: ./temp
-          merge-multiple: true
+          name: site-python-book
+          path: site/python-book
 
-      - name: Move all books to site directory
-        run: |
-          mv temp/python-book site/
-          mv temp/async-book site/
-          mv temp/rust-patterns-book site/
-          mv temp/type-driven-correctness-book site/
-          mv temp/engineering-book site/
+      - name: Download async-book
+        uses: actions/download-artifact@v4
+        with:
+          name: site-async-book
+          path: site/async-book
+
+      - name: Download rust-patterns-book
+        uses: actions/download-artifact@v4
+        with:
+          name: site-rust-patterns-book
+          path: site/rust-patterns-book
+
+      - name: Download type-driven-correctness-book
+        uses: actions/download-artifact@v4
+        with:
+          name: site-type-driven-correctness-book
+          path: site/type-driven-correctness-book
+
+      - name: Download engineering-book
+        uses: actions/download-artifact@v4
+        with:
+          name: site-engineering-book
+          path: site/engineering-book
 
       - name: Create .nojekyll file
         run: touch site/.nojekyll
+
+      - name: List site contents
+        run: ls -la site/
 
       - name: Upload merged site
         uses: actions/upload-pages-artifact@v3
