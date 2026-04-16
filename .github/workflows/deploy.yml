@@ -86,6 +86,9 @@ jobs:
           name: site-engineering-book
           path: site/engineering-book
 
+      - name: Copy index.html to site root
+        run: cp index.html site/
+
       - name: Create .nojekyll file
         run: touch site/.nojekyll
 

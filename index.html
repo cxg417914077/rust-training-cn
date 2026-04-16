@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Training 中文教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-bridge { background: #22c55e; }
+        .dot-deep { background: #3b82f6; }
+        .dot-advanced { background: #eab308; }
+        .dot-expert { background: #a855f7; }
+        .dot-practices { background: #8b5cf6; }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .book-level {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .level-bridge { background: #dcfce7; color: #166534; }
+        .level-deep { background: #dbeafe; color: #1e40af; }
+        .level-advanced { background: #fef3c7; color: #92400e; }
+        .level-expert { background: #f3e8ff; color: #6b21a8; }
+        .level-practices { background: #ede9fe; color: #5b21b6; }
+
+        .book-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+
+        .book-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .book-card ul {
+            margin-top: 16px;
+            padding-left: 20px;
+            color: #4b5563;
+        }
+
+        .book-card li {
+            margin-bottom: 6px;
+        }
+
+        .progress {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-status {
+            font-weight: 600;
+            color: #22c55e;
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦀 Rust Training 中文教程</h1>
+            <p>选择适合你的学习路径</p>
+        </header>
+
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-dot dot-bridge"></span>
+                <span>入门桥梁</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot dot-deep"></span>
+                <span>深入探索</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot dot-advanced"></span>
+                <span>高级主题</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot dot-expert"></span>
+                <span>专家级</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot dot-practices"></span>
+                <span>工程实践</span>
+            </div>
+        </div>
+
+        <div class="books-grid">
+            <a href="python-book/" class="book-card">
+                <span class="book-level level-bridge">🟢 入门桥梁</span>
+                <h2>Rust for Python Programmers</h2>
+                <p>为 Python 开发者设计的 Rust 入门教程。学习所有权、借用、生命周期等核心概念，无需系统编程背景。</p>
+                <div class="progress">
+                    <span class="progress-status">✅ 已完成</span>
+                    <span>17 章</span>
+                </div>
+            </a>
+
+            <a href="async-book/" class="book-card">
+                <span class="book-level level-advanced">🟡 高级主题</span>
+                <h2>Async Rust 异步编程</h2>
+                <p>深入理解 Rust 异步编程模型。涵盖 Future trait、Pin、执行器、Tokio 运行时等核心主题。</p>
+                <ul>
+                    <li>Future 与 Poll 机制</li>
+                    <li>Pin 和 Unpin 详解</li>
+                    <li>Tokio 实战</li>
+                </ul>
+                <div class="progress">
+                    <span class="progress-status">✅ 已完成</span>
+                    <span>17 章</span>
+                </div>
+            </a>
+
+            <a href="rust-patterns-book/" class="book-card">
+                <span class="book-level level-advanced">🟡 高级主题</span>
+                <h2>Rust Patterns 设计模式</h2>
+                <p>掌握 Rust 常用设计模式和最佳实践。包括 newtype、type-state、phantom types、智能指针等。</p>
+                <ul>
+                    <li>泛型和高级 trait</li>
+                    <li>智能指针与内部可变性</li>
+                    <li>宏编程</li>
+                </ul>
+                <div class="progress">
+                    <span class="progress-status">✅ 已完成</span>
+                    <span>19 章</span>
+                </div>
+            </a>
+
+            <a href="type-driven-correctness-book/" class="book-card">
+                <span class="book-level level-expert">🟣 专家级</span>
+                <h2>Type-Driven Correctness</h2>
+                <p>类型驱动的正确性：使用 Rust 类型系统在编译时证明程序正确性。掌握 14+ 种高级模式。</p>
+                <ul>
+                    <li>Capability 令牌</li>
+                    <li>Type-State 模式</li>
+                    <li>Phantom 类型</li>
+                    <li>Send/Sync 并发证明</li>
+                </ul>
+                <div class="progress">
+                    <span class="progress-status">✅ 已完成</span>
+                    <span>19 章</span>
+                </div>
+            </a>
+
+            <a href="engineering-book/" class="book-card">
+                <span class="book-level level-practices">🟤 工程实践</span>
+                <h2>Rust Engineering Practices</h2>
+                <p>Rust 工程最佳实践。涵盖构建脚本、交叉编译、性能分析、CI/CD、生产环境部署等。</p>
+                <ul>
+                    <li>build.rs 深度使用</li>
+                    <li>交叉编译</li>
+                    <li>性能分析和优化</li>
+                    <li>测试覆盖率</li>
+                </ul>
+                <div class="progress">
+                    <span class="progress-status">✅ 已完成</span>
+                    <span>13 章</span>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <p>基于 <a href="https://microsoft.github.io/RustTraining/" target="_blank">Microsoft Rust Training</a> 翻译</p>
+            <p>代码：MIT License | 文档：CC-BY-4.0</p>
+            <p><a href="https://github.com/cxg417914077/rust-training-cn" target="_blank">GitHub 仓库</a></p>
+        </footer>
+    </div>
+</body>
+</html>
