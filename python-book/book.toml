@@ -1,0 +1,13 @@
+[book]
+title = "Rust Python 程序员指南"
+authors = ["Microsoft Corporation", "中文翻译项目贡献者"]
+language = "zh-CN"
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/microsoft/RustTraining"
+edit-url-template = "https://github.com/microsoft/RustTraining/edit/main/chinese-translation/python-book/{path}"
+
+[output.html.fold]
+enable = true
+level = 1
