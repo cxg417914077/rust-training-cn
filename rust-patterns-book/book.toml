@@ -1,0 +1,13 @@
+[book]
+title = "Rust Patterns 中文教程"
+authors = ["Microsoft Corporation", "中文翻译项目贡献者"]
+language = "zh-CN"
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/cxg417914077/rust-training-cn"
+edit-url-template = "https://github.com/cxg417914077/rust-training-cn/edit/main/rust-patterns-book/{path}"
+
+[output.html.fold]
+enable = true
+level = 1
