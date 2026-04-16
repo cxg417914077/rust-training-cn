@@ -40,17 +40,51 @@ jobs:
           cd ${{ matrix.book }}
           mdbook build
 
-      - name: Upload artifact
+      - name: Upload book artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ matrix.book }}
+          path: ${{ matrix.book }}/book/
+          retention-days: 1
+          if-no-files-found: error
+
+  # Merge all book artifacts into one directory
+  merge-artifacts:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Create site directory
+        run: mkdir -p site
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: site-*
+          path: ./temp
+          merge-multiple: true
+
+      - name: Move all books to site directory
+        run: |
+          mv temp/python-book site/
+          mv temp/async-book site/
+          mv temp/rust-patterns-book site/
+          mv temp/type-driven-correctness-book site/
+          mv temp/engineering-book site/
+
+      - name: Create .nojekyll file
+        run: touch site/.nojekyll
+
+      - name: Upload merged site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ matrix.book }}/book
+          path: site
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: merge-artifacts
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
